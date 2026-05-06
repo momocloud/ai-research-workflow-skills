@@ -30,6 +30,8 @@ Each phase of the research workflow should operate in a clean, purpose-built con
 
 Before any experiment begins, a Research Contract is written defining: hypothesis, success signals, failure signals, ablation plan, metrics, and hyperparameters. Once experiments start, the contract cannot be retroactively modified to fit results.
 
+**Integrity enforcement**: The `research-experiment` skill automatically locks the contract by computing its SHA256 hash and storing a snapshot in `.research/contracts/`. The `research-analyze` and `research-write` skills verify this hash before proceeding. If the contract was tampered with, the workflow stops and the user must either revert or formally upgrade to a v2.
+
 **Rule**: If the contract needs updating (e.g., a hyperparameter range was wrong), produce a v2 with explicit change log. Never silently adjust success criteria after seeing results. Post-hoc rationalization is the enemy of honest research.
 
 ## 5. Ideas Grow from Experiments, Not from Thin Air

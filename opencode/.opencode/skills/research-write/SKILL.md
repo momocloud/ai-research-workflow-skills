@@ -15,6 +15,22 @@ Use this skill after `research-analyze` when experiment results have been valida
 - Completed `research-experiment` results
 - Completed `research-analyze` report with clear signal assessments
 
+## Contract Integrity Check
+
+Before proceeding, verify the research contract has not been modified since experiments began:
+
+1. Check if `.research/v1.sha256` exists:
+   - **If NOT**: the contract was never locked. Warn the user — experiments may not have been run through `research-experiment`. Suggest running it first.
+   - **If YES**: verify integrity:
+     - Current hash: `sha256sum research-contract-v1.md | awk '{print $1}'`
+     - Stored hash: `cat .research/v1.sha256`
+     - **Match**: contract is intact. Proceed.
+     - **Mismatch**: STOP. The contract was modified after experiments began. Show the diff:
+       `diff research-contract-v1.md .research/contracts/v1.lock.md`
+       The user must resolve this before proceeding — either revert the contract or create a v2 with changelog.
+
+Note: on macOS, use `shasum -a 256` instead of `sha256sum`.
+
 ## Instructions
 
 ### 1. Traceability Is Non-Negotiable

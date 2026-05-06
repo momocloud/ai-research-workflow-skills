@@ -91,6 +91,28 @@ flowchart LR
 
 ⚠️ 实验开始后不可修改，只能版本升级（v1 → v2）
 
+### 合约完整性校验
+
+实验开始时自动锁定合约，防止事后篡改：
+
+```
+.research/                   ← 自动创建，加入 .gitignore
+  contracts/
+    v1.lock.md               ← 实验开始时的合约快照
+  v1.sha256                  ← SHA256 校验值
+```
+
+```mermaid
+flowchart LR
+    A["/research-experiment<br/>启动时：计算 SHA256<br/>存储快照到 .research/"] --> B["/research-analyze<br/>启动时：比对 SHA256<br/>一致则继续"]
+    B --> C["/research-write<br/>启动时：比对 SHA256<br/>一致则继续"]
+    A -.->|"不一致"| D["STOP<br/>显示 diff<br/>用户决定：回滚或升级 v2"]
+    B -.->|"不一致"| D
+    C -.->|"不一致"| D
+```
+
+所有操作仅使用 POSIX 标准工具（`sha256sum`、`awk`、`diff`），无需额外依赖。
+
 ---
 
 ## 多模型协作架构

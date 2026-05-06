@@ -22,6 +22,29 @@ Read the contract carefully before writing any code.
 5. **Log everything.** Training curves, checkpoints, raw metric values, random seeds, git commit hashes.
 6. **Save results to a structured directory.**
 
+## Contract Integrity Check
+
+Before starting any experiments, lock the research contract to prevent undetected modifications:
+
+1. Check if `.research/v1.sha256` exists:
+   - **If NOT** (first run): lock the contract:
+     - `mkdir -p .research/contracts`
+     - `cp research-contract-v1.md .research/contracts/v1.lock.md`
+     - `sha256sum research-contract-v1.md | awk '{print $1}' > .research/v1.sha256`
+     - Inform the user: "Contract locked. Any modification during experiments will be detected."
+     - Add `.research/` to the project's `.gitignore` if not already present.
+   - **If YES** (resuming): verify the contract is intact:
+     - Current hash: `sha256sum research-contract-v1.md | awk '{print $1}'`
+     - Stored hash: `cat .research/v1.sha256`
+     - **Match**: proceed.
+     - **Mismatch**: STOP. The contract was modified after being locked. Show the diff:
+       `diff research-contract-v1.md .research/contracts/v1.lock.md`
+       The user must either:
+       - Revert: `cp .research/contracts/v1.lock.md research-contract-v1.md`
+       - Or formally upgrade to a v2 contract with explicit changelog, then re-lock.
+
+Note: on macOS, use `shasum -a 256` instead of `sha256sum`.
+
 ## Process
 
 ### Step 1: Read the Contract
