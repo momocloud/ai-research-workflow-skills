@@ -1,3 +1,8 @@
+---
+name: research-survey
+description: Literature survey for a deep learning research topic. Searches for relevant top-venue papers, summarizes findings, and identifies trends and opportunities.
+---
+
 Literature survey for a deep learning research topic. Searches for relevant top-venue papers, summarizes findings, and identifies trends and opportunities.
 
 You are conducting a comprehensive literature survey for a deep learning research project. Follow these steps precisely.

@@ -1,3 +1,8 @@
+---
+name: research-write
+description: Write a paper draft based on verified experiment results, ensuring every claim traces back to the research contract.
+---
+
 Write a paper draft based on verified experiment results, ensuring every claim traces back to the research contract.
 
 You are writing a research paper draft. Every claim must be backed by evidence from the research contract and experiment results.

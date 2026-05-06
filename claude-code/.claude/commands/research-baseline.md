@@ -1,3 +1,8 @@
+---
+name: research-baseline
+description: Determine the baseline for the research project based on survey results and research direction.
+---
+
 Determine the baseline for the research project based on survey results and research direction.
 
 You are selecting and specifying a baseline for a deep learning research project. Follow these steps precisely.

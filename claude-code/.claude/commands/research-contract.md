@@ -1,3 +1,8 @@
+---
+name: research-contract
+description: Write a formal research contract defining hypothesis, success/failure signals, and ablation plan before any experiments begin.
+---
+
 Write a formal research contract defining hypothesis, success/failure signals, and ablation plan before any experiments begin.
 
 You are writing a Research Contract — the most important document in this workflow. This contract defines what constitutes success and failure BEFORE any experiment runs. Its purpose is to prevent post-hoc rationalization.

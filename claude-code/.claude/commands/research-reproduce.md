@@ -1,3 +1,8 @@
+---
+name: research-reproduce
+description: Reproduce the baseline paper's results with strict context isolation and progress monitoring.
+---
+
 Reproduce the baseline paper's results with strict context isolation and progress monitoring.
 
 You are reproducing a baseline paper's results. This is one of the most underestimated steps in the research workflow. The reproduction serves as the anchor for ALL future experiments — your idea's improvement is only meaningful when measured against a verified baseline.

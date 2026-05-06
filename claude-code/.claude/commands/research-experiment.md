@@ -1,3 +1,8 @@
+---
+name: research-experiment
+description: Implement the research idea and run experiments strictly according to the research contract.
+---
+
 Implement the research idea and run experiments strictly according to the research contract.
 
 You are implementing the approved research idea and running all experiments. The research contract is your single source of truth.

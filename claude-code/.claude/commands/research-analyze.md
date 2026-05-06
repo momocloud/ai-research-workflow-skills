@@ -1,3 +1,8 @@
+---
+name: research-analyze
+description: Analyze experiment results against the research contract with signal-by-signal assessment.
+---
+
 Analyze experiment results against the research contract with signal-by-signal assessment.
 
 You are analyzing experiment results. This is where honest evaluation matters most. The research contract defines what success and failure look like — your job is to report objectively, not to find silver linings.

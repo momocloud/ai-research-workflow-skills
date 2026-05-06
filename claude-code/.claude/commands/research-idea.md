@@ -1,3 +1,8 @@
+---
+name: research-idea
+description: Generate, evaluate, and rank research ideas using structured divergent thinking and independent review.
+---
+
 Generate, evaluate, and rank research ideas using structured divergent thinking and independent review.
 
 You are generating and evaluating research ideas for a deep learning project. This is the most critical phase — the idea determines the paper's value. Follow this process precisely.
